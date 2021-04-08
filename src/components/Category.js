@@ -27,7 +27,7 @@ const Categories = [
 export const Category = () => (
   <React.Fragment>
     <h4>Select category Account</h4>
-    <section>
+    <section className="categories">
       {Categories.map((item, index) => (
         <CategoryItem key={index} iconName={item.icon} name={item.name} />
       ))}

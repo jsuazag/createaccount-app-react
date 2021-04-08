@@ -1,12 +1,14 @@
 import React from 'react';
 import { Category } from './components/Category';
+import { Container } from './components/Container';
 import { InputField } from './components/InputField';
 import { Logo } from './components/Logo';
 import {Title} from './components/Title';
 
 export const App = () => {
     return (
-        <React.Fragment>
+        <Container>
+            {/* comentario ...*/}
             <Title title="Add New Account" />
             <Logo />
             <InputField 
@@ -27,7 +29,13 @@ export const App = () => {
                 iconName="lock"
                 placeholder="Enter password"
             />
+            <InputField 
+                label="Password / Pin" 
+                type="password" 
+                iconName="lock"
+                placeholder="Enter password"
+            />
             <Category />
-        </React.Fragment>
+        </Container>
     )
 }

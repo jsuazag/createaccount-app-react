@@ -1,18 +1,29 @@
-import React from "react";
+import { useState } from "react";
 
 export const InputField = (props) => {
+
+  const [fieldType, setFieldType] = useState(props.type);
+
+  const toogleView = () => {
+    if (fieldType === 'password') {
+      setFieldType('text');
+    } else {
+      setFieldType('password');
+    }
+  }
+
   return (
-    <React.Fragment>
+    <div className="field">
       <label>{props.label}</label>
       <section>
         <div>{props.iconName}</div>
-        <input type={props.type} placeholder={props.placeholder} />
+        <input type={fieldType} placeholder={props.placeholder} />
         {props.type === "password" && (
-          <div>
-            <button>View</button>
+          <div className="view">
+            <button onClick={() => toogleView()}>View</button>
           </div>
         )}
       </section>
-    </React.Fragment>
+    </div>
   );
 };
